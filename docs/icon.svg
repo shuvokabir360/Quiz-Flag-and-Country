@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#070913"/>
+    </radialGradient>
+    <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="flagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+  <rect width="504" height="504" x="4" y="4" rx="106" fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="4"/>
+
+  <!-- World Globe Grid Circle -->
+  <circle cx="256" cy="270" r="160" fill="#0f172a" stroke="url(#globeGrad)" stroke-width="6" filter="url(#glow)"/>
+  
+  <!-- Latitude / Longitude arcs -->
+  <ellipse cx="256" cy="270" rx="160" ry="60" fill="none" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="3"/>
+  <ellipse cx="256" cy="270" rx="160" ry="110" fill="none" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="3"/>
+  <ellipse cx="256" cy="270" rx="80" ry="160" fill="none" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="3"/>
+  <line x1="96" y1="270" x2="416" y2="270" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="3"/>
+  <line x1="256" y1="110" x2="256" y2="430" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="3"/>
+
+  <!-- Flag Pole & Flag -->
+  <line x1="190" y1="90" x2="190" y2="350" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="190" cy="85" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+
+  <!-- Waving Flag Banner -->
+  <path d="M 195 95 C 250 80, 280 125, 345 105 L 345 220 C 280 240, 250 195, 195 210 Z" fill="url(#flagGrad)" stroke="#fef08a" stroke-width="4" filter="url(#glow)"/>
+  
+  <!-- Star on Flag -->
+  <polygon points="265,140 270,154 285,154 273,163 277,177 265,168 253,177 257,163 245,154 260,154" fill="#ffffff"/>
+</svg>
