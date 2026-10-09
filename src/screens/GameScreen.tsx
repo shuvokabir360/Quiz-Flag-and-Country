@@ -374,7 +374,7 @@ export const GameScreen: React.FC<GameScreenProps> = ({
         onGoHome={onGoHome}
         soundEnabled={settings.soundEffects}
         onToggleSound={() => updateSetting('soundEffects', !settings.soundEffects)}
-        hideScore={category === 'capital'}
+        hideScore={true}
         isAutoPlay={isAutoPlay}
         autoCountdown={autoCountdown}
         onToggleAutoPlay={handleToggleAutoPlay}
