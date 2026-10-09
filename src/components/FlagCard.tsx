@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { Country } from '../types/game';
+import { getFlagUrl } from '../utils/assetUrl';
 
 interface FlagCardProps {
   country: Country;
@@ -113,7 +114,7 @@ export const FlagCard: React.FC<FlagCardProps> = ({
             />
           ) : (
             <img
-              src={country.flagUrl || `/flags/${country.code.toLowerCase()}.svg`}
+              src={getFlagUrl(country)}
               alt={`${country.name} flag`}
               className="w-full h-full object-cover select-none pointer-events-none"
               loading="eager"

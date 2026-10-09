@@ -14,8 +14,9 @@ class PWAManager {
     // Register Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
+        const swUrl = (import.meta.env.BASE_URL || './').replace(/\/?$/, '/') + 'sw.js';
         navigator.serviceWorker
-          .register('/sw.js')
+          .register(swUrl)
           .then(() => {
             // Service worker registered successfully
           })

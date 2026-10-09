@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import type { GameMode, QuizCategory } from '../types/game';
 import { soundSynthesizer } from '../audio/soundSynthesizer';
 import { pwaManager } from '../utils/pwaManager';
+import { getFlagUrl } from '../utils/assetUrl';
 
 interface HomeScreenProps {
   onPlay: (mode: GameMode, category: QuizCategory) => void;
@@ -142,7 +143,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="flag-orbit-strip">
           {FEATURED_FLAGS.map((flag) => (
             <div key={flag.code} className={`flag-mini-chip ${flag.anim}`} title={flag.name}>
-              <img src={`/flags/${flag.code}.svg`} alt={flag.name} loading="eager" />
+              <img src={getFlagUrl(flag.code)} alt={flag.name} loading="eager" />
             </div>
           ))}
         </div>

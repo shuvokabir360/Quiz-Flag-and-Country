@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { virtualHandController } from '../utils/virtualHandController';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const GirlHandCursor: React.FC = () => {
   const [pos, setPos] = useState({ x: -300, y: -300 });
@@ -12,7 +13,7 @@ export const GirlHandCursor: React.FC = () => {
   // Process the real female hand photo to remove green screen and create transparent PNG
   useEffect(() => {
     const img = new Image();
-    img.src = '/girl_hand.jpg';
+    img.src = getAssetUrl('girl_hand.jpg');
     img.onload = () => {
       try {
         const canvas = document.createElement('canvas');

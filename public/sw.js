@@ -1,13 +1,13 @@
-const CACHE_NAME = 'flag-quiz-cache-v1';
+const CACHE_NAME = 'flag-quiz-cache-v2';
 
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon.svg',
-  '/icon-192.png',
-  '/icon-512.png',
-  '/favicon.svg'
+  './',
+  './index.html',
+  './manifest.json',
+  './icon.svg',
+  './icon-192.png',
+  './icon-512.png',
+  './favicon.svg'
 ];
 
 self.addEventListener('install', (event) => {

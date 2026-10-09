@@ -11,6 +11,7 @@ import { soundSynthesizer } from '../audio/soundSynthesizer';
 import { voiceManager } from '../audio/voiceManager';
 import { triggerConfettiBurst } from '../components/ConfettiEffect';
 import { virtualHandController } from '../utils/virtualHandController';
+import { getFlagUrl } from '../utils/assetUrl';
 
 interface GameScreenProps {
   mode: GameMode;
@@ -401,7 +402,7 @@ export const GameScreen: React.FC<GameScreenProps> = ({
           >
             <div className="w-full h-full flex items-center justify-center overflow-hidden">
               <img
-                src={currentQuestion.correctCountry.flagUrl || `/flags/${currentQuestion.correctCountry.code.toLowerCase()}.svg`}
+                src={getFlagUrl(currentQuestion.correctCountry)}
                 alt={currentQuestion.correctCountry.name}
                 className="w-full h-full object-cover select-none pointer-events-none"
                 loading="eager"
